@@ -1,0 +1,38 @@
+{% extends 'layoutText.html.twig' %}
+
+
+    {% block body %}
+        
+        {{ parent() }}
+    
+    <!-- Generador de formulario -->
+
+    <h2 class="h"> Welcome To The Text Area Manager!</h2>
+
+    <div id="stylized" class="myform" style="margin:20px auto;">
+      <form id="form" name="form" method="post" action="index.php">
+
+        <div id="div_1">
+
+          <fieldset id="buildyourform">
+            <legend>Build your own form!</legend>
+          </fieldset>
+          <button type="submit" class="save">Save</button>
+          <input type="button" value="Preview form" class="add" id="preview" />
+          <input type="button" value="Add a field" class="add" id="add" />
+
+        </div>
+
+        <!-- Formulario Generado-->
+        <div id="div_2">
+
+        </div>
+        <!-- Formulario Generado-->            
+      </form>
+    </div>
+      <!-- FOOTER -->
+          <footer class="footer">
+        <p><font><font>© 2016 Company, Inc. · </font></font> <font><font>Privacidad</font></font></a><font><font> · </font></font> <font><font>Condiciones</font></font></a></p>
+      </footer>
+    
+    {% endblock %}

@@ -1,0 +1,7 @@
+imagen_proactiva_generate_form:
+    resource: "@ImagenProactivaGenerateFormBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

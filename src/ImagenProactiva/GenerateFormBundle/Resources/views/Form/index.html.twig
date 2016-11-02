@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+
+    {% block body %}
+        
+        {{ parent() }}
+    
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item">
+          <img class="first-slide" src="../../../../../web/public/image/image1.jpg" alt="primera diapositiva">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><font><font>Generar Checkbox.</font></font></h1>
+              <p><font>Checkbox, is an element of interaction of the graphical user interface, which enables it make multiple selections from a set of options.</font></p>
+              <p><a class="btn btn-lg btn-primary" href="{{ path('imagen_proactiva_generate_checkbox')}}" role="button"><font><font>Generate Checkbox</font></font></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="../../../../../web/public/image/image2.jpg" alt="Segunda diapositiva">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><font><font>Generar Radio Button.</font></font></h1>
+              <p><font>Radio buttons are arranged in groups of two or more and displayed on the screen as a list of circular holes. They are normally accompanied by a label that describes the option that represents. The options are mutually exclusive; when one is selected, any previously selected radio buttons in the same group becomes deselected (which is only one can be selected).</font></p>
+              <p><a class="btn btn-lg btn-primary" href="{{ path('imagen_proactiva_generate_radio')}}" role="button"><font><font>Generate Radio Buttons</font></font></a></p>             </div>
+          </div>
+        </div>
+        <div class="item active">
+          <img class="third-slide" src="../../../../../web/public/image/image3.jpg" alt="tercera diapositiva">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1><font><font>Generar Text Area.</font></font></h1>
+              <p><font>A text box, text field or text entry box is a graphical control element intended to enable the user to input text information to be used by the program.</font></p>
+              <p><a class="btn btn-lg btn-primary" href="{{ path('imagen_proactiva_generate_text')}}" role="button"><font><font>Generate Text Area</font></font></a></p>              
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="http://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only"><font><font>Anterior</font></font></span>
+      </a>
+      <a class="right carousel-control" href="http://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only"><font><font>Siguiente</font></font></span>
+      </a>
+    </div><!-- /.carousel -->
+    
+    
+          <footer class="footer">
+        <p><font><font>© 2016 Company, Inc. · </font></font> <font><font>Privacidad</font></font></a><font><font> · </font></font> <font><font>Condiciones</font></font></a></p>
+      </footer>
+    
+    {% endblock %}

@@ -1,0 +1,83 @@
+body
+{
+    margin:0;padding:0;
+    font-family:Gill Sans MT,helvetica,tahoma,arial;
+    font-size:15px;
+    text-align:left;
+    padding:100px;
+}
+fieldset
+{
+    border: solid 1px #000;
+    padding:10px;
+    display:block;
+    clear:both;
+    margin:5px 0px;
+    color:#000000;
+}
+.h 
+{ font-weight:bold;
+    color: #0B0B3B;
+    text-align: center;
+    margin:30px
+}
+legend
+{
+    padding:0px 10px;
+    background: #81DAF5;
+    
+}
+button.save
+{
+    float:right;
+    color: #0101DF;
+}
+input.add
+{
+    float:right;
+    color: #0101DF;
+}
+input.fieldname, input.fieldnameQuestion
+{
+    float:left;
+    clear:left;
+    display:block;
+    margin:5px;
+}
+select.fieldtype
+{
+    float:left;
+    display:block;
+    margin:5px;
+}
+input.remove
+{
+    float:left;
+    display:block;
+    margin:5px;
+}
+#yourform label
+{
+    float:left;
+    clear:left;
+    display:block;
+    margin:5px;
+}
+#yourform input, #yourform textarea
+{
+    float:left;
+    display:block;
+    margin:5px;
+}
+.myform,
+{
+    margin:0 auto;width:1300px;padding:14px;
+}
+#stylized, #yourform
+{
+    border:solid 2px #b7ddf2;background:#ebf4fb;margin:70px 200px 80px 0px
+}
+#yourform, #div_2
+{
+margin:50px auto;
+}

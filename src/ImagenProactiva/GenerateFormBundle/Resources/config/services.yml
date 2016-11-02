@@ -1,0 +1,4 @@
+services:
+#    imagen_proactiva_generate_form.example:
+#        class: ImagenProactiva\GenerateFormBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

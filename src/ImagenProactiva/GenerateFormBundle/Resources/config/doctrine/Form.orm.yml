@@ -1,0 +1,24 @@
+ImagenProactiva\GenerateFormBundle\Entity\Form:
+    type: entity
+    table: forms
+    repositoryClass: ImagenProactiva\GenerateFormBundle\Entity\FormRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        question:
+            type: string
+            length: 255
+        radioButton:
+            type: string
+            length: 255
+        checkbox:
+            type: string
+            length: 255
+        textArea:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

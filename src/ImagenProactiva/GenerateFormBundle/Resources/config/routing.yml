@@ -1,0 +1,12 @@
+imagen_proactiva_generate_form_index:
+    path:     /form/index
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:index }
+    
+imagen_proactiva_generate_checkbox:
+    path:     /form/checkbox
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:checkbox }
+    
+imagen_proactiva_generate_create_checkbox:
+    path:     /checkbox/create
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:checkboxCreate }
+    methods: POST
