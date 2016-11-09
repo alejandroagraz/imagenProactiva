@@ -19,7 +19,7 @@ class FormType extends AbstractType
             ->add('radioButton', 'radio')
             ->add('checkbox', 'checkbox')
             ->add('textArea', 'textarea')
-            ->add('save', 'submit', array('label' => 'Save Form' ));
+            ->add('save', 'submit', array('label' => 'Save Form' ))
         ;
     }
     
