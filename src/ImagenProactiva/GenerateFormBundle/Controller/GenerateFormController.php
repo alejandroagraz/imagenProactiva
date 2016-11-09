@@ -34,26 +34,61 @@ class GenerateFormController extends Controller
         return $this->render('ImagenProactivaGenerateFormBundle:Form:generateTextArea.html.twig');
     }
     
-    public function recibirAction(Request $request)
+    public function recibirchAction(Request $request)
     {
+        
 
         if ($request->isXMLHttpRequest()) 
         
         {
-             $data = json_decode($request->getContent(), true);
-             $em = $this->getDoctrine()->getManager();
-             $forms = $em->getRepository('ImagenProactivaGenerateFormBundle:Form');
-             
-             //var_dump($array["foo"]);
-             
-            return new jsonResponse($data, 200);
+            $data = json_decode($request->getContent(), true);
+            
+            return new jsonResponse($data,200);
+
+
 
         } else {
-             $em = $this->getDoctrine()->getManager();
 
-            
                 return new jsonResponse('Bad Request.', 400);
         }
-}
+    }
+    
+     public function recibirraAction(Request $request)
+    {
+        
+
+        if ($request->isXMLHttpRequest()) 
+        
+        {
+            $data = json_decode($request->getContent(), true);
+            
+            return new jsonResponse($data,200);
+
+
+
+        } else {
+
+                return new jsonResponse('Bad Request.', 400);
+        }
+    }
+    
+     public function recibirteAction(Request $request)
+    {
+        
+
+        if ($request->isXMLHttpRequest()) 
+        
+        {
+            $data = json_decode($request->getContent(), true);
+            
+            return new jsonResponse($data,200);
+
+
+
+        } else {
+
+                return new jsonResponse('Bad Request.', 400);
+        }
+    }    
 
 }

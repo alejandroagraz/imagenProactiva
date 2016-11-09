@@ -1,6 +1,6 @@
 ImagenProactiva\GenerateFormBundle\Entity\Form:
     type: entity
-    table: forms
+    table: null
     repositoryClass: ImagenProactiva\GenerateFormBundle\Entity\FormRepository
     id:
         id:
@@ -12,13 +12,11 @@ ImagenProactiva\GenerateFormBundle\Entity\Form:
         question:
             type: string
             length: 255
-        radioButton:
-            type: string
-            length: 255
-        checkbox:
-            type: string
-            length: 255
-        textArea:
-            type: string
-            length: 255
+
+    oneToMany:
+        resps:
+            targetEntity: Response
+            mappedBy: forms
+            cascade: ["remove"]            
+    
     lifecycleCallbacks: {  }

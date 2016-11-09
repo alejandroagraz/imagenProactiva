@@ -22,22 +22,6 @@ class Form
     private $question;    
 
     /**
-     * @var string
-     */
-    private $radioButton;
-
-    /**
-     * @var string
-     */
-    private $checkbox;
-
-    /**
-     * @var string
-     */
-    private $textArea;
-
-
-    /**
      * Get id
      *
      * @return integer 
@@ -71,71 +55,18 @@ class Form
     }
 
     /**
-     * Set radioButton
-     *
-     * @param string $radioButton
-     * @return Form
+     * @var \Doctrine\Common\Collections\Collection
      */
-    public function setRadioButton($radioButton)
-    {
-        $this->radioButton = $radioButton;
-
-        return $this;
-    }
-
-    /**
-     * Get question
-     *
-     * @return string 
-     */
-    public function getRadioButton()
-    {
-        return $this->radioButton;
-    }
+    private $resps;
     
     /**
-     * Set checkbox
+     * Get resps
      *
-     * @param string $checkbox
-     * @return Form
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function setCheckbox($checkbox)
+    public function getResps()
     {
-        $this->checkbox = $checkbox;
-
-        return $this;
-    }
-
-    /**
-     * Get checkbox
-     *
-     * @return string 
-     */
-    public function getCheckbox()
-    {
-        return $this->checkbox;
-    }
-
-    /**
-     * Set textArea
-     *
-     * @param string $textArea
-     * @return Form
-     */
-    public function setTextArea($textArea)
-    {
-        $this->textArea = $textArea;
-
-        return $this;
-    }
-
-    /**
-     * Get textArea
-     *
-     * @return string 
-     */
-    public function getTextArea()
-    {
-        return $this->textArea;
-    }
+        return $this->resps;
+    }    
+    
 }

@@ -1,0 +1,30 @@
+ImagenProactiva\GenerateFormBundle\Entity\Response:
+    type: entity
+    table: null
+    repositoryClass: ImagenProactiva\GenerateFormBundle\Entity\ResponseRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        respuesta:
+            type: string
+            length: 255
+        resp:
+            type: array
+        jsonResp:
+            type: json_array
+            column: json_resp
+            
+    manyToOne:
+        form:
+            targetEntity: Form
+            inversedBy: resps
+            cascade: ["remove"]
+            joinColumn:
+                name: form_id
+                referencedColumnName: id
+                
+    lifecycleCallbacks: {  }

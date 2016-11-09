@@ -15,5 +15,13 @@ imagen_proactiva_generate_text:
     defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:text }
     
 imagen_proactiva_generate_create_checkbox:
-    path:     /form/create
-    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:recibir }
+    path:     /create/checkbox
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:recibirch }
+
+imagen_proactiva_generate_create_radio:
+    path:     /create/radio
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:recibirra }
+    
+imagen_proactiva_generate_create_text:
+    path:     /create/text
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:recibirte } 
