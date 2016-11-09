@@ -36,7 +36,6 @@ class GenerateFormController extends Controller
     
     public function recibirchAction(Request $request)
     {
-        
 
         if ($request->isXMLHttpRequest()) 
         
@@ -45,7 +44,22 @@ class GenerateFormController extends Controller
             
             return new jsonResponse($data,200);
 
-
+            /*
+            $em = $this->getDoctrine()->getManager();
+            $forms = $em->getRepository('ImagenProactivaGenerateFormBundle:Form')->find($data['id_form']);
+            
+            if($forms==null)
+            {
+                return new jsonResponse(['Bad Request.'],400);
+            } else {
+                if(!empty($data['Question']))
+                {
+                    
+                    return new jsonResponse(['Okk']);
+                } else {
+                    return new jsonResponse(['Bad Request.'],400);
+                }
+            } */
 
         } else {
 
@@ -55,7 +69,6 @@ class GenerateFormController extends Controller
     
      public function recibirraAction(Request $request)
     {
-        
 
         if ($request->isXMLHttpRequest()) 
         
@@ -64,7 +77,22 @@ class GenerateFormController extends Controller
             
             return new jsonResponse($data,200);
 
-
+            /*
+            $em = $this->getDoctrine()->getManager();
+            $forms = $em->getRepository('ImagenProactivaGenerateFormBundle:Form')->find($data['id_form']);
+            
+            if($forms==null)
+            {
+                return new jsonResponse(['Bad Request.'],400);
+            } else {
+                if(!empty($data['Question']))
+                {
+                    
+                    return new jsonResponse(['Okk']);
+                } else {
+                    return new jsonResponse(['Bad Request.'],400);
+                }
+            } */
 
         } else {
 
@@ -74,7 +102,6 @@ class GenerateFormController extends Controller
     
      public function recibirteAction(Request $request)
     {
-        
 
         if ($request->isXMLHttpRequest()) 
         

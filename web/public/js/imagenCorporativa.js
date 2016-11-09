@@ -51,22 +51,20 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
 
             $("#buildyourform div").each(function() {
 
-                var id = "input" + $(this).attr("id").replace("field","");
+                var id = "checkbox" + $(this).attr("id").replace("field","");
 
                 if ( $(this).find("input.fieldnameQuestion").first().val()) {
                     
-                    var idd = "Question"; //+ Math.floor(Math.random() * 11) ;
-                    var labelQ = $("<label for=\"" + idd + "\">" + 'Question : ' + $(this).find("input.fieldnameQuestion").first().val() + '?' + "</label>");
-                    var inputQ = $("<input type=\"text\" id=\"" + idd + "\" name=\"" + idd + "\" value=\"" + $(this).find("input.fieldnameQuestion").first().val() + "\" style='display:none'  />");
-
+                    var labelQ = $("<label>" + 'Question : ' + $(this).find("input.fieldnameQuestion").first().val() + '?' + "</label>");
+                    var inputQ = $("<input type=\"text\" name='Question' value=\"" + $(this).find("input.fieldnameQuestion").first().val() + "\" style='display:none'  />");
 
                 } else {
                     var labelQ = "";
                 }   
 
-                var label = $("<label for=\"" + id + "\">" + $(this).find("input.fieldname").first().val() + "</label>");
+                var label = $("<label>" + $(this).find("input.fieldname").first().val() + "</label>");
                     
-                var input = $("<input type=\"checkbox\" id=\"" + id + "\" name=\"" + id + "\" value=\"" + $(this).find("input.fieldname").first().val() + "\" />");
+                var input = $("<input type=\"checkbox\" name=\"" + id + "\" value=\"" + $(this).find("input.fieldname").first().val() + "\" />");
 
                 fieldSet.append(labelQ);
                 fieldSet.append(inputQ);
@@ -151,15 +149,14 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
 
                 if ( $(this).find("input.fieldnameQuestion").first().val()) {
                     
-                     var idd = "Question"; //+ Math.floor(Math.random() * 11) ;
-                    var labelQ = $("<label for=\"" + idd + "\">" + 'Question : ' + $(this).find("input.fieldnameQuestion").first().val() + '?' + "</label>");
-                    var inputQ = $("<input type=\"text\" id=\"" + idd + "\" name=\"" + idd + "\" value=\"" + $(this).find("input.fieldnameQuestion").first().val() + "\" style='display:none'  />");
+                    var labelQ = $("<label>" + 'Question : ' + $(this).find("input.fieldnameQuestion").first().val() + '?' + "</label>");
+                    var inputQ = $("<input type=\"text\" name='Question' value=\"" + $(this).find("input.fieldnameQuestion").first().val() + "\" style='display:none'  />");
                     
                 } else {
                     var labelQ = "";
                 }   
 
-                var label = $("<label for=\"" + id + "\">" + $(this).find("input.fieldname").first().val() + "</label>");
+                var label = $("<label>" + $(this).find("input.fieldname").first().val() + "</label>");
 
                 var input = $("<input type='radio' id='radio' name='radio' value=\"" + $(this).find("input.fieldname").first().val() + "\" />");
 
@@ -242,19 +239,18 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
 
                     $("#buildyourform div").each(function() {
 
-                        var id = "input" + $(this).attr("id").replace("field","");
+                        var id = "textarea" + $(this).attr("id").replace("field","");
 
                         if ( $(this).find("input.fieldnameQuestion").first().val()) {
                             
-                            var idd = "Question"; //+ Math.floor(Math.random() * 11) ;
-                            var labelQ = $("<label for=\"" + idd + "\">" + 'Question : ' + $(this).find("input.fieldnameQuestion").first().val() + '?' + "</label>");
-                            var inputQ = $("<input type=\"text\" id=\"" + idd + "\" name=\"" + idd + "\" value=\"" + $(this).find("input.fieldnameQuestion").first().val() + "\" style='display:none'  />");
+                            var labelQ = $("<label>" + 'Question : ' + $(this).find("input.fieldnameQuestion").first().val() + '?' + "</label>");
+                            var inputQ = $("<input type=\"text\" name='Question' value=\"" + $(this).find("input.fieldnameQuestion").first().val() + "\" style='display:none'  />");
 
                         } else {
                             var labelQ = "";
                         }   
 
-                        var label = $("<label for=\"" + id + "\">" + $(this).find("input.fieldname").first().val() + "</label>");
+                        var label = $("<label>" + $(this).find("input.fieldname").first().val() + "</label>");
                             
                         var input = $("<textarea id=\"" + id + "\" name=\"" + id + "\" ></textarea>");
 
