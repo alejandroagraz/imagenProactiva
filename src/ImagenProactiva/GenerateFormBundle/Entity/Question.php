@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Question
- * 
  */
 
 class Question
@@ -57,17 +56,40 @@ class Question
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $resps;
-    
+    private $answers;
+
     /**
-     * Get resps
+     * Get answers
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getResps()
+    public function getAnswers()
     {
-        return $this->resps;
+        return $this->answers;
     }
     
-    
+    /**
+     * Add answer
+     *
+     * @param \GenerateFormBundle\Entity\Answer $answer
+     *
+     * @return Question
+     */
+    public function addAnswer(\GenerateFormBundle\Entity\Answer $answer)
+    {
+        $this->answers[] = $answer;
+
+        return $this;
+    }
+
+    /**
+     * Remove answer
+     *
+     * @param \GenerateFormBundle\Entity\Answer $answer
+     */
+    public function removeAnswer(\GenerateFormBundle\Entity\Answer $answer)
+    {
+        $this->answers->removeElement($answer);
+    }
+
 }

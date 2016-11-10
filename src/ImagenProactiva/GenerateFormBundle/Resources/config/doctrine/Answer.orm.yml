@@ -9,19 +9,14 @@ ImagenProactiva\GenerateFormBundle\Entity\Answer:
             generator:
                 strategy: AUTO
     fields:
-        respuesta:
+        answer:
             type: string
             length: 255
-        resp:
-            type: array
-        jsonResp:
-            type: json_array
-            column: json_resp
-            
+
     manyToOne:
-        form:
+        question:
             targetEntity: Question
-            inversedBy: resps
+            inversedBy: answers
             cascade: ["remove"]
             joinColumn:
                 name: question_id

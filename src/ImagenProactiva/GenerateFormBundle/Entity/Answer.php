@@ -15,25 +15,9 @@ class Answer
     private $id;
 
     /**
-     * @var integer
-     */
-    private $formsId;
-
-    /**
      * @var string
      */
-    private $respuesta;
-
-    /**
-     * @var array
-     */
-    private $resp;
-
-    /**
-     * @var array
-     */
-    private $jsonResp;
-
+    private $answer;
 
     /**
      * Get id
@@ -45,114 +29,45 @@ class Answer
         return $this->id;
     }
 
-    /**
-     * Set formsId
+      /**
+     * Set answer
      *
-     * @param integer $formsId
-     * @return Response
+     * @param string $answer
+     * @return Answer
      */
-    public function setFormsId($formsId)
+    public function setAnswer($answer)
     {
-        $this->formsId = $formsId;
+        $this->answer = $answer;
 
         return $this;
     }
 
     /**
-     * Get formsId
-     *
-     * @return integer 
-     */
-    public function getFormsId()
-    {
-        return $this->formsId;
-    }
-
-    /**
-     * Set respuesta
-     *
-     * @param string $respuesta
-     * @return Response
-     */
-    public function setRespuesta($respuesta)
-    {
-        $this->respuesta = $respuesta;
-
-        return $this;
-    }
-
-    /**
-     * Get respuesta
+     * Get answer
      *
      * @return string 
      */
-    public function getRespuesta()
+    public function getAnswer()
     {
-        return $this->respuesta;
-    }
-
-    /**
-     * Set resp
-     *
-     * @param array $resp
-     * @return Response
-     */
-    public function setResp($resp)
-    {
-        $this->resp = $resp;
-
-        return $this;
-    }
-
-    /**
-     * Get resp
-     *
-     * @return array 
-     */
-    public function getResp()
-    {
-        return $this->resp;
-    }
-
-    /**
-     * Set jsonResp
-     *
-     * @param array $jsonResp
-     * @return Response
-     */
-    public function setJsonResp($jsonResp)
-    {
-        $this->jsonResp = $jsonResp;
-
-        return $this;
-    }
-
-    /**
-     * Get jsonResp
-     *
-     * @return array 
-     */
-    public function getJsonResp()
-    {
-        return $this->jsonResp;
+        return $this->answer;
     }
     
     /**
      * @var \GenerateFormBundle\Entity\Question
      */
-    private $form;
+    private $question;
 
 
     /**
      * Set question
      *
-     * @param \GenerateFormBundle\Entity\Question
+     * @param \GenerateFormBundle\Entity\Question $question
      *
-     * @return Response
+     * @return Answer
      */
-    public function setUser(\GenerateFormBundle\Entity\Question $question = null)
+    public function setQuestion(\GenerateFormBundle\Entity\Question $question = null)
     {
-        $this->form = $question;
+        $this->question = $question;
 
         return $this;
     }
@@ -166,6 +81,5 @@ class Answer
     {
         return $this->question;
     }    
-    
     
 }

@@ -14,7 +14,7 @@ ImagenProactiva\GenerateFormBundle\Entity\Question:
             length: 255
 
     oneToMany:
-        resps:
+        answers:
             targetEntity: Answer
             mappedBy: question
             cascade: ["remove"]            
