@@ -5,9 +5,9 @@ namespace ImagenProactiva\GenerateFormBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Response
+ * Answer
  */
-class Response
+class Answer
 {
     /**
      * @var integer
@@ -138,33 +138,33 @@ class Response
     }
     
     /**
-     * @var \GenerateFormBundle\Entity\Form
+     * @var \GenerateFormBundle\Entity\Question
      */
     private $form;
 
 
     /**
-     * Set form
+     * Set question
      *
-     * @param \GenerateFormBundle\Entity\Form
+     * @param \GenerateFormBundle\Entity\Question
      *
      * @return Response
      */
-    public function setUser(\GenerateFormBundle\Entity\Form $form = null)
+    public function setUser(\GenerateFormBundle\Entity\Question $question = null)
     {
-        $this->form = $form;
+        $this->form = $question;
 
         return $this;
     }
 
     /**
-     * Get form
+     * Get question
      *
-     * @return \GenerateFormBundle\Entity\Form
+     * @return \GenerateFormBundle\Entity\Question
      */
-    public function getForm()
+    public function getQuestion()
     {
-        return $this->form;
+        return $this->question;
     }    
     
     

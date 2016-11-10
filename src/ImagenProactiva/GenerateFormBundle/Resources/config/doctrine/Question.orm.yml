@@ -1,7 +1,7 @@
-ImagenProactiva\GenerateFormBundle\Entity\Form:
+ImagenProactiva\GenerateFormBundle\Entity\Question:
     type: entity
     table: null
-    repositoryClass: ImagenProactiva\GenerateFormBundle\Entity\FormRepository
+    repositoryClass: ImagenProactiva\GenerateFormBundle\Entity\QuestionRepository
     id:
         id:
             type: integer
@@ -15,8 +15,8 @@ ImagenProactiva\GenerateFormBundle\Entity\Form:
 
     oneToMany:
         resps:
-            targetEntity: Response
-            mappedBy: forms
+            targetEntity: Answer
+            mappedBy: question
             cascade: ["remove"]            
     
     lifecycleCallbacks: {  }

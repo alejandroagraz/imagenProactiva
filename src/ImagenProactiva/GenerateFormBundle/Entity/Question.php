@@ -5,11 +5,11 @@ namespace ImagenProactiva\GenerateFormBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Form
+ * Question
  * 
  */
 
-class Form
+class Question
 {
     /**
      * @var integer
@@ -35,7 +35,7 @@ class Form
      * Set question
      *
      * @param string $question
-     * @return Form
+     * @return Question
      */
     public function setQuestion($question)
     {
@@ -67,6 +67,7 @@ class Form
     public function getResps()
     {
         return $this->resps;
-    }    
+    }
+    
     
 }

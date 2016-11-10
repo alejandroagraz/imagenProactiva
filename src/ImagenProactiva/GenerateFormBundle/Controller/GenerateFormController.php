@@ -6,32 +6,32 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use ImagenProactiva\GenerateFormBundle\Entity\Form;
-use ImagenProactiva\GenerateFormBundle\Form\FormType;
+use ImagenProactiva\GenerateFormBundle\Entity\Question;
+use ImagenProactiva\GenerateFormBundle\Entity\Answer;
 
 class GenerateFormController extends Controller
 {
     public function indexAction()
     {
    
-        return $this->render('ImagenProactivaGenerateFormBundle:Form:index.html.twig');
+        return $this->render('ImagenProactivaGenerateFormBundle:Question:index.html.twig');
     }
     
     
     public function checkboxAction()
     {
 
-        return $this->render('ImagenProactivaGenerateFormBundle:Form:generateCheckbox.html.twig');
+        return $this->render('ImagenProactivaGenerateFormBundle:Question:generateCheckbox.html.twig');
     } 
     
     public function radioAction()
     {
-        return $this->render('ImagenProactivaGenerateFormBundle:Form:generateRadioButtons.html.twig');
+        return $this->render('ImagenProactivaGenerateFormBundle:Question:generateRadioButtons.html.twig');
     } 
     
     public function textAction()
     {
-        return $this->render('ImagenProactivaGenerateFormBundle:Form:generateTextArea.html.twig');
+        return $this->render('ImagenProactivaGenerateFormBundle:Question:generateTextArea.html.twig');
     }
     
     public function recibirchAction(Request $request)

@@ -1,7 +1,7 @@
-ImagenProactiva\GenerateFormBundle\Entity\Response:
+ImagenProactiva\GenerateFormBundle\Entity\Answer:
     type: entity
     table: null
-    repositoryClass: ImagenProactiva\GenerateFormBundle\Entity\ResponseRepository
+    repositoryClass: ImagenProactiva\GenerateFormBundle\Entity\AnswerRepository
     id:
         id:
             type: integer
@@ -20,11 +20,11 @@ ImagenProactiva\GenerateFormBundle\Entity\Response:
             
     manyToOne:
         form:
-            targetEntity: Form
+            targetEntity: Question
             inversedBy: resps
             cascade: ["remove"]
             joinColumn:
-                name: form_id
+                name: question_id
                 referencedColumnName: id
                 
     lifecycleCallbacks: {  }

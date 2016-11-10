@@ -1,5 +1,5 @@
-imagen_proactiva_generate_form_index:
-    path:     /form/index
+imagen_proactiva_index:
+    path:     /index
     defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:index }
     
 imagen_proactiva_generate_checkbox:
