@@ -3,6 +3,7 @@
 namespace ImagenProactiva\GenerateFormBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ImagenProactiva\GenerateFormBundle\Entity\Question;
 
 /**
  * Answer
@@ -18,6 +19,11 @@ class Answer
      * @var string
      */
     private $answer;
+    
+    /**
+     * @var \GenerateFormBundle\Entity\Question
+     */
+    private $question;
 
     /**
      * Get id
@@ -51,12 +57,6 @@ class Answer
     {
         return $this->answer;
     }
-    
-    /**
-     * @var \GenerateFormBundle\Entity\Question
-     */
-    private $question;
-
 
     /**
      * Set question
@@ -65,7 +65,7 @@ class Answer
      *
      * @return Answer
      */
-    public function setQuestion(\GenerateFormBundle\Entity\Question $question = null)
+    public function setQuestion(Question $question = null)
     {
         $this->question = $question;
 
@@ -80,6 +80,5 @@ class Answer
     public function getQuestion()
     {
         return $this->question;
-    }    
-    
+    }
 }

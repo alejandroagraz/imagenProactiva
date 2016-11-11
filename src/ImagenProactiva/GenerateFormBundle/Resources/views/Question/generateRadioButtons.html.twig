@@ -6,9 +6,10 @@
         {{ parent() }}
     
     <!-- Generador de formulario -->
-    <script> var create = "{{ path('imagen_proactiva_generate_create_radio')}}"; </script>
+    <script> var create = "{{ path('imagen_proactiva_generate_create')}}"; </script>
+    <script> var redirect = "{{ path('imagen_proactiva_generate_view_questions')}}"; </script>
 
-    <h2 class="h"> Welcome To The Buttons Manager!</h2>
+    <h2 class="h"> Welcome To The Radio Buttons Manager!</h2>
 
     <div id="stylized" class="myform" style="margin:20px auto;">
         <form id="form" name="form">

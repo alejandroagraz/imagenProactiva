@@ -3,6 +3,8 @@
 namespace ImagenProactiva\GenerateFormBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use ImagenProactiva\GenerateFormBundle\Entity\Answer;
 
 /**
  * Question
@@ -18,7 +20,18 @@ class Question
     /**
      * @var string
      */
-    private $question;    
+    private $question;
+    
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $answers;
+
+
+    public function __construct()
+    {
+        $this->answers = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -54,11 +67,6 @@ class Question
     }
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $answers;
-
-    /**
      * Get answers
      *
      * @return \Doctrine\Common\Collections\Collection
@@ -75,7 +83,7 @@ class Question
      *
      * @return Question
      */
-    public function addAnswer(\GenerateFormBundle\Entity\Answer $answer)
+    public function addAnswer(Answer $answer)
     {
         $this->answers[] = $answer;
 
@@ -87,9 +95,8 @@ class Question
      *
      * @param \GenerateFormBundle\Entity\Answer $answer
      */
-    public function removeAnswer(\GenerateFormBundle\Entity\Answer $answer)
+    public function removeAnswer(Answer $answer)
     {
         $this->answers->removeElement($answer);
     }
-
 }

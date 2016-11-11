@@ -11,18 +11,41 @@ use ImagenProactiva\GenerateFormBundle\Entity\Answer;
 
 class GenerateFormController extends Controller
 {
-    public function indexAction()
+
+    public function indexAction(Request $request)
     {
-   
-        return $this->render('ImagenProactivaGenerateFormBundle:Question:index.html.twig');
+        // replace this example code with whatever you need
+        return $this->render('default/index.html.twig', array(
+            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+        ));
     }
     
+    public function viewQuestionAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository('ImagenProactivaGenerateFormBundle:Question');
+        $question = $repository->find($id);
+        if ($question) {
+            $response = [
+                'name' => $question->getQuestion,
+                'answers' => []
+            ];
+            foreach ($question->getAnswers() as $answer) {
+                $response['answers'][] = $answer->getAnswer();
+            }
+            return $this->render('ImagenProactivaGenerateFormBundle:Question:viewQuestion.html.twig',['question'=>$response]);
+        }
+        throw $this->createNotFoundException('Question not exist');
+    }
+    
+    
+    
+    //====================================>>  <<=======================================
     
     public function checkboxAction()
     {
 
         return $this->render('ImagenProactivaGenerateFormBundle:Question:generateCheckbox.html.twig');
-    } 
+    }
     
     public function radioAction()
     {
@@ -34,88 +57,62 @@ class GenerateFormController extends Controller
         return $this->render('ImagenProactivaGenerateFormBundle:Question:generateTextArea.html.twig');
     }
     
-    public function recibirchAction(Request $request)
+    
+  
+  //====================================>>  <<=======================================  
+    
+    public function createQuestionAction(Request $request)
     {
+        $answer = new Answer();
 
         if ($request->isXMLHttpRequest()) 
-        
         {
             $data = json_decode($request->getContent(), true);
-            
-            return new jsonResponse($data,200);
-
-            /*
             $em = $this->getDoctrine()->getManager();
-            $forms = $em->getRepository('ImagenProactivaGenerateFormBundle:Form')->find($data['id_form']);
-            
-            if($forms==null)
-            {
-                return new jsonResponse(['Bad Request.'],400);
-            } else {
-                if(!empty($data['Question']))
-                {
-                    
-                    return new jsonResponse(['Okk']);
+            foreach ($data as $key => $current) {
+                if ($key==0) {
+                    $question = new Question();
+                    $question->setQuestion($current['value']);
                 } else {
-                    return new jsonResponse(['Bad Request.'],400);
+                    $answer = new Answer();
+                    $answer->setAnswer($current['value']);
+                    $answer->setQuestion($question);
+                    $question->addAnswer($answer);
+                    $em->persist($answer);
                 }
-            } */
-
-        } else {
-
-                return new jsonResponse('Bad Request.', 400);
+            }
+            $em->persist($question);
+            $em->flush();
+            return new jsonResponse('OK',200);
         }
+        
+        return new Response('Not Found',404);
     }
     
-     public function recibirraAction(Request $request)
+  public function viewAllQuestionsAction()
     {
+        /*
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('ImagenProactivaGenerateFormBundle:Question');
+        $question = $repository->findAll();
 
-        if ($request->isXMLHttpRequest()) 
-        
-        {
-            $data = json_decode($request->getContent(), true);
-            
-            return new jsonResponse($data,200);
-
-            /*
-            $em = $this->getDoctrine()->getManager();
-            $forms = $em->getRepository('ImagenProactivaGenerateFormBundle:Form')->find($data['id_form']);
-            
-            if($forms==null)
-            {
-                return new jsonResponse(['Bad Request.'],400);
-            } else {
-                if(!empty($data['Question']))
-                {
-                    
-                    return new jsonResponse(['Okk']);
-                } else {
-                    return new jsonResponse(['Bad Request.'],400);
-                }
-            } */
-
-        } else {
-
-                return new jsonResponse('Bad Request.', 400);
+        if ($question) {
+            $response = [
+                'name' => $question->getQuestion,
+                'answers' => []
+            ];
+            foreach ($question->getAnswers() as $answer) {
+                $response['answers'][] = $answer->getAnswer();
+            }
+            return $this->render('ImagenProactivaGenerateFormBundle:Question:viewQuestion.html.twig',['question'=>$response]);
         }
+        throw $this->createNotFoundException('Question not exist');      
+       */ 
+       
+       return new jsonResponse('Vista por definir',200);
+        
     }
-    
-     public function recibirteAction(Request $request)
-    {
-
-        if ($request->isXMLHttpRequest()) 
-        
-        {
-            $data = json_decode($request->getContent(), true);
-            
-            return new jsonResponse($data,200);
-
-
-
-        } else {
-
-                return new jsonResponse('Bad Request.', 400);
-        }
-    }    
 
 }
+    
+    

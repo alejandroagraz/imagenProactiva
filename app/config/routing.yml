@@ -3,5 +3,5 @@ imagen_proactiva_generate_form:
     prefix:   /
 
 app:
-    resource: "@AppBundle/Controller/"
+    resource: "@ImagenProactivaGenerateFormBundle/Controller/"
     type:     annotation

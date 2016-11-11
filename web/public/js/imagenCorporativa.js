@@ -1,25 +1,22 @@
 
 
-if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/form/checkbox") { // =========>> Ruta para crear checkbox aca puede probar lo que hace el codigo<<===========
+if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/checkbox") { // =========>> Ruta para crear checkbox aca puede probar lo que hace el codigo<<===========
 
-    window.onload = funcion_primera;
+    window.onload = auto_shoot;
 
 // =========>> Genera el primer input checkbox y label al cargar el documento <<===========
-        function funcion_primera () {
+        function auto_shoot () {
             var intId = $("#buildyourform div").length + 1;
             var fieldWrapper = $("<div class='fieldwrapper' id=\"field" + intId + "\"/>");
             var fQuestion = $(" <label for='question'>Indique la pregunta</label> <br> <input type='text' class='fieldnameQuestion'  placeholder=' Introduzca Preg '> <br> ");  
             var fName = $("<input type='text' class='fieldname'  placeholder='Nombre del campo' />");
             var fType = $("<select class='fieldtype'> <option value='checkbox'>Checked</option></select>");
             $(fType).css("display", "none");
-            var removeButton = $("<input type='button' class='remove' value='Remove' />");
-            removeButton.click(function() {
-                $(this).parent().remove();
-            });
+          
+
             fieldWrapper.append(fQuestion);
             fieldWrapper.append(fName);
             fieldWrapper.append(fType);
-            fieldWrapper.append(removeButton);
             $("#buildyourform").append(fieldWrapper);
         };
 
@@ -33,10 +30,13 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
             var fName = $("<input type='text' class='fieldname'  placeholder='Nombre del campo' />");
             var fType = $("<select class='fieldtype'> <option value='checkbox'>Checked</option></select>");
             $(fType).css("display", "none");
+            
             var removeButton = $("<input type='button' class='remove' value='Remove' />");
+
             removeButton.click(function() {
                 $(this).parent().remove();
             });
+            
             fieldWrapper.append(fName);
             fieldWrapper.append(fType);
             fieldWrapper.append(removeButton);
@@ -91,7 +91,16 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
                     data: JSON.stringify(datos_formulario),
                     dataType: 'JSON',
                     success: function(datosRecibidos) {
-                        $('#ImprimeAcaLoRecibidoEnPhp').text(JSON.stringify(datosRecibidos, null, 4));
+                        //alert("Datos almacenados correctamente.", location.reload());
+                        confirmar=confirm("Datos almacenados correctamente, Generar Otra Pregunta?"); 
+                            if (confirmar) {
+                                location.reload();
+                            } else {
+                                alert('Nooo');
+                                //$(location).attr('href',redirect); 
+                            }
+                        
+                        //$('#ImprimeAcaLoRecibidoEnPhp').text(JSON.stringify(datosRecibidos, null, 4));
                         // $('#respuesta').text(datos.respuesta).fadeIn('slow');
                     }
                 });
@@ -99,7 +108,7 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
 // ===================>>>>>>   Fin peticion ajax  <<<<<<============================            
     });
 
-} else if (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/form/radio") { // =========>> Ruta para generar radio aun no funciona <<===========
+} else if (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/radio") { // =========>> Ruta para generar radio aun no funciona <<===========
 
     window.onload = auto_shoot;
 
@@ -110,14 +119,10 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
             var fName = $("<input type=\"text\" class=\"fieldname\"  placeholder=\" Nombre del campo\" />");
             var fType = $("<select class=\"fieldtype\"> <option value=\"radio\">Radio Button</option> </select>");
             $(fType).css("display", "none");
-            var removeButton = $("<input type=\"button\" class=\"remove\" value=\"Remove\" />");
-            removeButton.click(function() {
-                $(this).parent().remove();
-            });
+
             fieldWrapper.append(fQuestion);
             fieldWrapper.append(fName);
             fieldWrapper.append(fType);
-            fieldWrapper.append(removeButton);
             $("#buildyourform").append(fieldWrapper);
         };
 
@@ -129,10 +134,13 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
             var fName = $("<input type=\"text\" class=\"fieldname\"  placeholder=\" Nombre del campo \" />");
             var fType = $("<select class=\"fieldtype\"> <option value=\"radio\">Radio Button</option> </select>");
             $(fType).css("display", "none");
+            
             var removeButton = $("<input type=\"button\" class=\"remove\" value=\"Remove\" />");
+            
             removeButton.click(function() {
                 $(this).parent().remove();
             });
+            
             fieldWrapper.append(fName);
             fieldWrapper.append(fType);
             fieldWrapper.append(removeButton);
@@ -185,7 +193,16 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
                     data: JSON.stringify(datos_formulario),
                     dataType: 'JSON',
                     success: function(datosRecibidos) {
-                        $('#ImprimeAcaLoRecibidoEnPhp').text(JSON.stringify(datosRecibidos, null, 4));
+                        //alert("Datos almacenados correctamente.", location.reload());
+                        confirmar=confirm("Datos almacenados correctamente, Generar Otra Pregunta?"); 
+                            if (confirmar) {
+                                location.reload();
+                            } else {
+                                alert('Nooo');
+                                //$(location).attr('href',redirect); 
+                            }
+                            
+                        //$('#ImprimeAcaLoRecibidoEnPhp').text(JSON.stringify(datosRecibidos, null, 4));
                         // $('#respuesta').text(datos.respuesta).fadeIn('slow');
                     }
                 });
@@ -193,7 +210,7 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
 // ===================>>>>>>   Fin peticion ajax  <<<<<<============================            
     });
 
-} else if (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/form/text") {
+} else if (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/text") {
 
     window.onload = auto_shoot;
 
@@ -204,14 +221,10 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
             var fName = $("<input type='text' class='fieldname'  placeholder=' Nombre del campo' />");
             var fType = $("<select class=\"fieldtype\"> <option value=\"textarea\">Text Area</option></select>");
             $(fType).css("display", "none");
-            var removeButton = $("<input type=\"button\" class=\"remove\" value=\"Remove\" />");
-            removeButton.click(function() {
-                $(this).parent().remove();
-            });
+
             fieldWrapper.append(fQuestion);
             fieldWrapper.append(fName);
             fieldWrapper.append(fType);
-            fieldWrapper.append(removeButton);
             $("#buildyourform").append(fieldWrapper);
         };
 
@@ -223,10 +236,13 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
                 var fName = $("<input type=\"text\" class=\"fieldname\"  placeholder=\" Nombre del campo \" />");
                 var fType = $("<select class=\"fieldtype\"> <option value=\"textarea\">Text Area</option> /select>");
                 $(fType).css("display", "none");
+                
                 var removeButton = $("<input type=\"button\" class=\"remove\" value=\"Remove\" />");
+            
                 removeButton.click(function() {
                     $(this).parent().remove();
                 });
+                
                 fieldWrapper.append(fName);
                 fieldWrapper.append(fType);
                 fieldWrapper.append(removeButton);
@@ -278,7 +294,16 @@ if  (window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_d
                     data: JSON.stringify(datos_formulario),
                     dataType: 'JSON',
                     success: function(datosRecibidos) {
-                        $('#ImprimeAcaLoRecibidoEnPhp').text(JSON.stringify(datosRecibidos, null, 4));
+                        //alert("Datos almacenados correctamente.", location.reload());
+                        confirmar=confirm("Datos almacenados correctamente, Generar Otra Pregunta?"); 
+                            if (confirmar) {
+                                location.reload();
+                            } else {
+                                alert('Nooo');
+                                //$(location).attr('href',redirect); 
+                            }
+                        
+                        //$('#ImprimeAcaLoRecibidoEnPhp').text(JSON.stringify(datosRecibidos, null, 4));
                         // $('#respuesta').text(datos.respuesta).fadeIn('slow');
                     }
                 });

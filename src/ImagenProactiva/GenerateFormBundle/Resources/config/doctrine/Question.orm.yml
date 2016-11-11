@@ -17,6 +17,6 @@ ImagenProactiva\GenerateFormBundle\Entity\Question:
         answers:
             targetEntity: Answer
             mappedBy: question
-            cascade: ["remove"]            
+            cascade: ["remove"] 
     
     lifecycleCallbacks: {  }

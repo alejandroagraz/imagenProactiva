@@ -20,7 +20,7 @@
                 <div class="navbar-wrapper">
       <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,18 +35,24 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="{{ path('imagen_proactiva_index')}}"><font><font>Home</font></font></a></li>
                 <li><a href="#about"><font><font>About </font></font></a></li>
-                <li><a href="#contact"><font><font>Contact</font></font></a></li>
+                <li><a href="#contact"><font><font>Contact</font></font></a></li>                 
+
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><font><font>Dropdown</font></font><span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="{{ path('imagen_proactiva_generate_radio')}}"><font><font>Create Radio Buttons</font></font></a></li>
-                    <li><a href="{{ path('imagen_proactiva_generate_text')}}"><font><font>Create Text Area</font></font></a></li>
+                    <li class="dropdown-header">Create</li>
+                    <li><a href="{{ path('imagen_proactiva_generate_radio')}}"><font><font>Radio Buttons</font></font></a></li>
+                    <li><a href="{{ path('imagen_proactiva_generate_text')}}"><font><font>Text Area</font></font></a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">View</li>
+                    <li><a href="{{ path('imagen_proactiva_generate_view_questions')}}"><font><font>View All Question</font></font></a></li>
                   </ul>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
+
 
       </div>
     </div>
