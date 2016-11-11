@@ -1,33 +1,23 @@
-
 {% extends 'layoutViewAll.html.twig' %}
 
-{% block body %}
 
-        <div width="50%" cellpadding="0" cellspacing="0">
-           <div class="col-md-16">
-                <div class="page-header margin-none">
-                    <h2 class="padding-none"> Question and Answere</h2>
+    {% block body %}
+        
+        {{ parent() }}
+    
+        <h2 class="h"> Stored Questions and Answers!</h2>
+
+
+
+
+
+
+  
+      <!-- FOOTER -->
+      
+          <footer class="footer">
+        <p><font><font>© 2016 Company, Inc. · </font></font> <font><font>Privacidad</font></font></a><font><font> · </font></font> <font><font>Condiciones</font></font></a></p>
+      </footer>
+    
+    {% endblock %}
                 
-        <div class="table-responsive">
-            <table class="table table-striped table-hover">
-               
-                <thead class="bg-primary">
-                    <tr>
-                        <th class="text-center" nowrap width="10%" height="10%">Question</th>
-                        <th class="text-center" nowrap width="10%" height="10%">Answere</th>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    
-
-
-
-                       </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-{% endblock %}

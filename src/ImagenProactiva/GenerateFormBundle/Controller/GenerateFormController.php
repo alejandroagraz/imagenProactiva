@@ -108,8 +108,8 @@ class GenerateFormController extends Controller
         }
         throw $this->createNotFoundException('Question not exist');      
        */ 
-       
-       return new jsonResponse('Vista por definir',200);
+       return $this->render('ImagenProactivaGenerateFormBundle:Question:viewQuestion.html.twig');
+
         
     }
 
