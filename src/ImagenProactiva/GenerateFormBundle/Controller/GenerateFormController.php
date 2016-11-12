@@ -26,13 +26,28 @@ class GenerateFormController extends Controller
         $question = $repository->find($id);
         if ($question) {
             $response = [
-                'name' => $question->getQuestion,
+                'id' => $question->getId(),
+                'name' => $question->getQuestion(),
                 'answers' => []
             ];
             foreach ($question->getAnswers() as $answer) {
                 $response['answers'][] = $answer->getAnswer();
             }
             return $this->render('ImagenProactivaGenerateFormBundle:Question:viewQuestion.html.twig',['question'=>$response]);
+        }
+        throw $this->createNotFoundException('Question not exist');
+    }
+    
+    public function deleteQuestionAction($id)
+    {
+        $repository = $this->getDoctrine()->getRepository('ImagenProactivaGenerateFormBundle:Question');
+        $em = $this->getDoctrine()->getManager();
+        $question = $repository->find($id);
+        if ($question) {
+            $url = $this->generateUrl('imagen_proactiva__view_all_questions',[],true);
+            $em->remove($question);
+            $em->flush();
+            return $this->redirect($url);
         }
         throw $this->createNotFoundException('Question not exist');
     }
@@ -89,27 +104,25 @@ class GenerateFormController extends Controller
         return new Response('Not Found',404);
     }
     
-  public function viewAllQuestionsAction()
+    public function viewAllQuestionsAction()
     {
-        /*
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('ImagenProactivaGenerateFormBundle:Question');
-        $question = $repository->findAll();
 
-        if ($question) {
-            $response = [
-                'name' => $question->getQuestion,
+        $repository = $this->getDoctrine()->getRepository('ImagenProactivaGenerateFormBundle:Question');
+        $questions = $repository->findAll();
+        $response = [];
+        foreach ($questions as $question) {
+            $current = [
+                'id' => $question->getId(),
+                'name' => $question->getQuestion(),
                 'answers' => []
             ];
             foreach ($question->getAnswers() as $answer) {
-                $response['answers'][] = $answer->getAnswer();
+                $current['answers'][] = $answer->getAnswer();
             }
-            return $this->render('ImagenProactivaGenerateFormBundle:Question:viewQuestion.html.twig',['question'=>$response]);
+            $response[] = $current;
         }
-        throw $this->createNotFoundException('Question not exist');      
-       */ 
-       return $this->render('ImagenProactivaGenerateFormBundle:Question:viewQuestion.html.twig');
 
+       return $this->render('ImagenProactivaGenerateFormBundle:Question:viewAllQuestions.html.twig',['questions'=>$response]);
         
     }
 

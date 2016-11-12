@@ -7,12 +7,18 @@
     
         <h2 class="h"> Stored Questions and Answers!</h2>
 
+        <div>
+            <div>
+                <h4 style="float:left;">{{ question.name }}</h4><a style="float:left;" href="{{ url('imagen_proactiva_delete_question', { 'id': question.id }) }}">delete</a>
+                <div style="clear: both" ></div>
+            </div>
+            <ul>
+            {% for answer in question.answers %}
+                <li>{{ answer }}</li>
+            {% endfor %}
+            </ul>
+        </div>
 
-
-
-
-
-  
       <!-- FOOTER -->
       
           <footer class="footer">

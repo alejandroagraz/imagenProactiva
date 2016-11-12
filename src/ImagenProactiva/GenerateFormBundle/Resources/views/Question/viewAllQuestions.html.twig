@@ -1,0 +1,31 @@
+{% extends 'layoutViewAll.html.twig' %}
+
+
+    {% block body %}
+        
+        {{ parent() }}
+    
+        <h2 class="h"> Stored Questions and Answers!</h2>
+        
+        {% for question in questions %}
+            <div>
+                <div>
+                    <h4 style="float:left;">{{ question.name }}</h4><a style="float:left;" href="{{ url('imagen_proactiva_view_question', { 'id': question.id }) }}">view</a>
+                    <div style="clear: both" ></div>
+                </div>
+                <ul>
+                {% for answer in question.answers %}
+                    <li>{{ answer }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+
+      <!-- FOOTER -->
+      
+          <footer class="footer">
+        <p><font><font>© 2016 Company, Inc. · </font></font> <font><font>Privacidad</font></font></a><font><font> · </font></font> <font><font>Condiciones</font></font></a></p>
+      </footer>
+    
+    {% endblock %}
+                

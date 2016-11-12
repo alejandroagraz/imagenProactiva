@@ -18,10 +18,14 @@ imagen_proactiva_generate_create:
     path:     /create
     defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:createQuestion }
 
-imagen_proactiva_generate_view_questions:
-    path:     /view/questions
-    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:viewallquestions }
+imagen_proactiva__view_all_questions:
+    path:     /question/all
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:viewAllquestions }
     
 imagen_proactiva_view_question:
     path:     /question/view/{id}
-    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:viewQuestion } 
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:viewQuestion }
+    
+imagen_proactiva_delete_question:
+    path:     /question/delete/{id}
+    defaults: { _controller: ImagenProactivaGenerateFormBundle:GenerateForm:deleteQuestion }
