@@ -5,27 +5,70 @@
         
         {{ parent() }}
     
-        <h2 class="h"> Stored Questions and Answers!</h2>
+          <div width="50%" cellpadding="0" cellspacing="0">
+               <div class="col-md-16">
+                    <div class="page-header margin-none">
+                        <h2 class="text-center" >Stored Questions and Answers!</h2>
+                    </div>      
+                
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                           
+                            <thead class="bg-primary">
+                                <tr>
+                                    <th class="text-center" nowrap width="10%" height="10%">Questions</th>
+                                    <th class="text-center" nowrap width="10%" height="10%">Answers</th>
+                                    <th class="text-center" nowrap width="10%" height="10%">View</th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
         
-        {% for question in questions %}
-            <div>
-                <div>
-                    <h4 style="float:left;">{{ question.name }}</h4><a style="float:left;" href="{{ url('imagen_proactiva_view_question', { 'id': question.id }) }}">view</a>
-                    <div style="clear: both" ></div>
-                </div>
-                <ul>
-                {% for answer in question.answers %}
-                    <li>{{ answer }}</li>
-                {% endfor %}
-                </ul>
-            </div>
-        {% endfor %}
+                                {% for question in questions %}
+                                        
+                                    <tr class="text-center">
+                                        <td width="10%" height="10%"> <p style="float:center;"> {{ question.name }} </p> </td>
+                                            
+                                        <td width="10%" height="10%">  
+                                            {% for answer in question.answers %}
+                                        
+                                                <p style="float:center;"> {{ answer }} <br> <p>
 
-      <!-- FOOTER -->
-      
-          <footer class="footer">
-        <p><font><font>© 2016 Company, Inc. · </font></font> <font><font>Privacidad</font></font></a><font><font> · </font></font> <font><font>Condiciones</font></font></a></p>
-      </footer>
+                                            {% endfor %}
+                                        </td>
+                                            
+                                        <td>
+                                            <a class="btn btn-primary" style="float:center;" href="{{ url('imagen_proactiva_view_question', { 'id': question.id }) }}"> View </a>
+                                            
+                                            <a class="btn btn-danger" style="float:center;" href="{{ url('imagen_proactiva_delete_question', { 'id': question.id }) }}">Delete</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                    
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>                        
+        
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>
+            <font>
+                <font>© 2016 Company, Inc. · </font>
+            </font>
+            <font>
+                <font>Privacidad</font>
+            </font>
+            </a>
+            <font>
+                <font> · </font>
+            </font> 
+            <font>
+                <font>Condiciones</font>
+            </font>
+            </a>
+        </p>
+    </footer>
     
     {% endblock %}
-                
