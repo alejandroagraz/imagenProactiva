@@ -1,6 +1,6 @@
 
 
-if  (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/checkbox") { // =========>> Ruta para crear checkbox aca puede probar lo que hace el codigo<<===========
+if  ((window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/checkbox") || (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/checkbox")) { // =========>> Ruta para crear checkbox aca puede probar lo que hace el codigo<<===========
 
     window.onload = auto_shoot;
 
@@ -108,7 +108,7 @@ if  (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_de
 // ===================>>>>>>   Fin peticion ajax  <<<<<<============================            
     });
 
-} else if (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/radio") { // =========>> Ruta para generar radio aun no funciona <<===========
+} else if ((window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/radio") || (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/radio")) { // =========>> Ruta para generar radio <<===========
 
     window.onload = auto_shoot;
 
@@ -210,7 +210,7 @@ if  (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_de
 // ===================>>>>>>   Fin peticion ajax  <<<<<<============================            
     });
 
-} else if (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/text") {
+} else if ((window.location == "https://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/text") || (window.location == "http://imagen-proactiva-joseagraz.c9users.io/web/app_dev.php/text")) {
 
     window.onload = auto_shoot;
 
